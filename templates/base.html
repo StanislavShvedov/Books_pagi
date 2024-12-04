@@ -14,12 +14,7 @@
 
   <body>
     {% block content %}{% endblock %}
-    {% if page.has_previous %}
-    <a href="?pub_date= {{ page.previous_page_number }}">{ page }</a>
-    {% endif %}
-    {% if page.has_next %}
-    <a href="?pub_date= {{ page.next_page_number }}">{ pub_date }</a>
-    {% endif %}
+
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
   </body>

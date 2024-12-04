@@ -23,15 +23,14 @@ def books_view(request):
 
     template = 'books/books_list.html'
     if page_book:
-        print('Da')
         for book in book_list:
             if page_book in book.values():
                 page = paginator.get_page(page_book)
         context = {
-            'page': page
+            'page': page,
+            'books': page.object_list
         }
     elif not page_book:
-        print('NET')
         context = {
             'books': book_list
         }

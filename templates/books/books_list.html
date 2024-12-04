@@ -25,6 +25,12 @@
                 <p>Дата публикации: {{ book.pub_date }}</p>
             </div>
             {% endfor %}
+            {% if page.has_previous %}
+            <a href="?pub_date= {{ page.previous_page_number }}">{{ page }}</a>
+            {% endif %}
+            {% if page.has_next %}
+            <a href="?pub_date= {{ page.next_page_number }}">{{ page }}</a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
